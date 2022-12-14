@@ -5,8 +5,6 @@
 
 <script lang="ts">
 
-import { sleep } from "../util.ts";
-
 export default {
 
     props: {
@@ -41,7 +39,6 @@ export default {
 
     watch: {
         async value(from, to) {
-            let diff = to - from;
             let frames = 12;
             let step = Math.floor(diff / frames);
 
@@ -50,9 +47,7 @@ export default {
                     this.output += step;
                     await sleep(15);
                 }
-            }
-
-            this.output = this.value;
+this.output = this.value;
         },
     },
 
